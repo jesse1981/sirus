@@ -18,13 +18,13 @@ class survey extends template {
         echo $jsn;
     }
     public function getitems() {
-        $parent_id  = (isset($_POST["parent_id"]))  ? (int)$_POST["parent_id"]:0;
+        $parent_id  = (isset($_POST["id"]))         ? (int)$_POST["id"]:0;
         $group_id   = (isset($_POST["group_id"]))   ? (int)$_POST["group_id"]:0;
         $db = new database();
         $parent = ($group_id) ? "group_id":"parent_id";
         $id     = ($group_id) ? $group_id:$parent_id;
         
-        $sql = "SELECT * "
+        $sql = "SELECT o.*,t.type "
                 . "FROM objects o "
                 . "INNER JOIN types t ON o.type_id = t.id "
                 . "WHERE o.$parent = $id";
@@ -32,7 +32,7 @@ class survey extends template {
         $tab = $db->getTable($res);
         $jsn = json_encode($tab);
         
-        echo $jsn;
+        echo $jsn;;
     }
 }
 ?>

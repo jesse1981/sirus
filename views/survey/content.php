@@ -9,22 +9,17 @@
 <script>
 $(document).ready(function() {
     var id          = (getQueryVariable('id'))      ? getQueryVariable('id'):1;
-    var parent_id   = (getQueryVariable('parent'))  ? getQueryVariable('parent'):0;
-    var group_id    = (getQueryVariable('group'))   ? getQueryVariable(getQueryVariable):0;
     if (!profile.survey.length) {
         getitem(id,function(item) {
             item = JSON.parse(item);
             switch (item[0].type) {
                 case "question":
                     $('#title').html(item[0].label);
-                    getlist(id,parent_id,group_id,function(res) {
+                    getlist(id,function(res) {
                         for (var i in res) {
                             $('#list').append('<option/>');
                             var option = $('#list option:last-child');
-                            option.attr('id',res[i].id);
-                            option.attr('parent_id',res[i].parent_id);
-                            option.attr('group_id',res[i].group_id);
-                            option.attr('group_id',res[i].value);
+                            option.attr('id',res[i].value);
                             option.text(res[i].label);
                         }
                     });
@@ -39,6 +34,18 @@ $(document).ready(function() {
     else {
         alert('You have already completed this survey, do you want to record a new pain?');
     }
+    
+    // ********************
+    // ** EVENTS
+    // ********************
+    $('#list').change(function() {
+        var obj         = $(this).children(':selected');
+        var id          = obj.attr('id');
+        // put code in to store selection to local storage!
+        
+        // redirect
+        window.location = '/survey?id='+id;
+    });
 });
 function getitem(id,cb) {
     $.ajax({
@@ -48,11 +55,11 @@ function getitem(id,cb) {
         }
     });
 }
-function getlist(id,parent_id,group_id,cb) {
+function getlist(id,cb) {
     $.ajax({
         url: '/survey/getitems',
         type: 'POST',
-        data: 'id='+id+'&parent='+parent_id+'&group='+group_id,
+        data: 'id='+id,
         dataType: 'json',
         success: function(res) {
             cb(res);
