@@ -1,0 +1,14 @@
+RewriteEngine On
+
+RewriteRule ^cgi-bin - [L,NC]
+RewriteRule ^downloads - [L,NC]
+RewriteRule ^js - [L,NC]
+RewriteRule ^img - [L,NC]
+RewriteRule ^css - [L,NC]
+RewriteRule OpenLayers - [L,NC]
+RewriteRule ^appointments - [L,NC]
+
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/(.*)$ index.php?module=$1&action=$2&id=$3&format=$4 [QSA,L]
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/(.*)$ index.php?module=$1&action=$2&id=$3 [QSA,L]
+RewriteRule ^([a-zA-Z0-9_-]+)/(.*)$ index.php?module=$1&action=$2 [QSA,L]
+RewriteRule ^(.*)$ index.php?module=$1 [QSA,L]

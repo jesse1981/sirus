@@ -1,0 +1,1 @@
+<?php $content = $this->loadPartialView('views/login/content.php'); ?>
