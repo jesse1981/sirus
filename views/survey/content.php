@@ -13,12 +13,14 @@ $(document).ready(function() {
     var group_id    = (getQueryVariable('group'))   ? getQueryVariable(getQueryVariable):0;
     if (!profile.survey.length) {
         getitem(id,function(item) {
+            item = JSON.parse(item);
             switch (item[0].type) {
                 case "question":
-                    $('#title').text = item[0].value;
+                    $('#title').html(item[0].label);
                     getlist(id,parent_id,group_id,function(res) {
                         for (var i in res) {
-                            var option = $('#list').append('<option/>');
+                            $('#list').append('<option/>');
+                            var option = $('#list option:last-child');
                             option.attr('id',res[i].id);
                             option.attr('parent_id',res[i].parent_id);
                             option.attr('group_id',res[i].group_id);
@@ -48,8 +50,9 @@ function getitem(id,cb) {
 }
 function getlist(id,parent_id,group_id,cb) {
     $.ajax({
-        url: '/survey/getlist?id='+id+'&parent='+parent_id+'&group='+group_id,
-        type: 'GET',
+        url: '/survey/getitems',
+        type: 'POST',
+        data: 'id='+id+'&parent='+parent_id+'&group='+group_id,
         dataType: 'json',
         success: function(res) {
             cb(res);
