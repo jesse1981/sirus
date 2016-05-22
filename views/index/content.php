@@ -12,8 +12,9 @@
                 <span>Distract Me</span>
             </a>
         </div>
-        <div class="grid-item">
+        <div class="grid-item" style="clear: left;">
             <a href="/show">
+                <img src="/img/graph.png" />
                 <span>Show Me</span>
             </a>
         </div>

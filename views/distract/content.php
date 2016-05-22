@@ -1,6 +1,6 @@
 <div class="main">
     <div class="list-wrapper">
-        <div class="list-item">
+        <div class="list-item games">
             <h3>Games</h3>
             <select id="games">
                 <option value="0">-- Select One --</option>
@@ -11,12 +11,11 @@
                 <option value="poll">Billiards</option>
                 <option value="superflashmariobros">Super Mario</option>
                 <option value="egyptian-horse">Egyptian Horse</option>
-                <option value="">Angry Birds Halloween</option>
-                <option value="angry"></option>
+                <option value="angry">Angry Birds Halloween</option>
                 <option value="kingdom-bow">Kingdom Bow</option>
             </select>
         </div>
-        <div class="list-item">
+        <div class="list-item youtube">
             <h3>Youtube</h3>
             <select id="youtube">
                 <option value="0">-- Select One --</option>
@@ -24,7 +23,7 @@
                 <option value="PLU74Y_bNwfvTEP9pUTuDmOiuSbBc8trLk">Comedy Sketches</option>
             </select>
         </div>
-        <div class="list-item">
+        <div class="list-item spotify">
             <h3>Spotify</h3>
             <select id="spotify">
                 <option value="0">-- Select One --</option>
@@ -40,21 +39,21 @@ $(document).ready(function() {
         var obj = $(this).children(':selected');
         if (obj.attr('value')!=="0") {
             var value = obj.attr('value');
-            window.location('/distract/game/'+value);
+            window.location = '/distract/game/'+value;
         }
     });
     $('#youtube').change(function() {
         var obj = $(this).children(':selected');
         if (obj.attr('value')!=="0") {
             var value = obj.attr('value');
-            window.location('/distract/youtube/'+value);
+            window.location = '/distract/youtube/'+value;
         }
     });
     $('#spotify').change(function() {
         var obj = $(this).children(':selected');
         if (obj.attr('value')!=="0") {
             var value = obj.attr('value');
-            window.location('/distract/spotify/'+value);
+            window.location = '/distract/spotify/'+value;
         }
     });
 });    
