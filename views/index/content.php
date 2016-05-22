@@ -1,9 +1,9 @@
 <div class='main'>
     <div class="grid-wrapper">
         <div class="grid-item">
-            <a href="/diary">
-                <img src="/img/diary.png" />
-                <span>Believe Me</span>
+            <a href="/doc">
+                <img src="/img/doc.png" />
+                <span>What's up Doc?</span>
             </a>
         </div>
         <div class="grid-item">
@@ -13,14 +13,15 @@
             </a>
         </div>
         <div class="grid-item" style="clear: left;">
-            <a href="/show">
-                <img src="/img/graph.png" />
+            <a href="/diary">
+                <img src="/img/diary.png" />
                 <span>Show Me</span>
             </a>
         </div>
         <div class="grid-item">
-            <a>
-                <span></span>
+            <a href="/share">
+                <img src="/img/share.png" />
+                <span>Connect Me</span>
             </a>
         </div>
     </div>
