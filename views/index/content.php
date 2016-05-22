@@ -2,17 +2,19 @@
     <div class="grid-wrapper">
         <div class="grid-item">
             <a href="/diary">
+                <img src="/img/diary.png" />
                 <span>Believe Me</span>
             </a>
         </div>
         <div class="grid-item">
             <a href="/distract">
+                <img src="/img/entertainment.png" />
                 <span>Distract Me</span>
             </a>
         </div>
         <div class="grid-item">
-            <a>
-                <span></span>
+            <a href="/show">
+                <span>Show Me</span>
             </a>
         </div>
         <div class="grid-item">
