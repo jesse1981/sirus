@@ -32,7 +32,19 @@ class survey extends template {
         $tab = $db->getTable($res);
         $jsn = json_encode($tab);
         
-        echo $jsn;;
+        echo $jsn;
+    }
+    public function submit($id) {
+        $date       = date('Y-m-d');
+        
+        $db         = new database();
+        $session    = new session();
+        $user_id    = $session->getKey('user_id');
+        if ($id) {
+            $sql = "INSERT INTO user_kb (user_id,object_id,date) "
+                    . "VALUES ($user_id,$id,'$date')";
+            $db->query($sql);
+        }
     }
 }
 ?>

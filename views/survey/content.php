@@ -19,6 +19,7 @@ $(document).ready(function() {
                         for (var i in res) {
                             $('#list').append('<option/>');
                             var option = $('#list option:last-child');
+                            option.attr('object_id',res[i].id);
                             option.attr('id',res[i].value);
                             option.text(res[i].label);
                         }
@@ -39,12 +40,17 @@ $(document).ready(function() {
     // ** EVENTS
     // ********************
     $('#list').change(function() {
-        var obj         = $(this).children(':selected');
-        var id          = obj.attr('id');
+        var obj     = $(this).children(':selected');
+        var id      = obj.attr('object_id');
+        var value   = obj.attr('id');
         // put code in to store selection to local storage!
-        
-        // redirect
-        window.location = '/survey?id='+id;
+        $.ajax({
+            url: '/survey/submit/'+id,
+            success: function() {
+                // redirect
+                window.location = '/survey?id='+value;
+            }
+        });
     });
 });
 function getitem(id,cb) {
