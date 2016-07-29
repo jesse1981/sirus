@@ -1,0 +1,217 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+#{
+ box-sizing: border-box;
+
+}
+.main_warp {
+    background-color: #f2992e;
+    width: 100vw;
+    height: 100vh;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.diary_main_warp {
+    height: 120vh;
+}
+#navcontainer {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: left;
+    background-color: rgb(242, 63, 33);
+}
+#navbar {
+    float: left;
+    margin-left: ;
+    width: 100%;
+    height: 60px;
+    background-color;
+    overflow: auto;
+    font-family: 'Lato', sans-serif;
+    /*position: relative;*/
+}
+#navbar a {
+    display: inline-block;
+    height: 30px;
+    padding: 20px 15px 20px 15px;
+    border: 0px;
+    margin: 0px;
+    background-color;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    float: right;
+}
+#navbar a:hover {
+    background-color: #f2992e;
+}
+.login_text {
+    text-align: center;
+    color: white;
+    font-family: 'Lato', sans-serif;
+}
+.hero_signup {
+    position: absolute;
+    position: center center;
+    text-align: center;
+    background-color: none;
+    width: 35vw;
+    height: 60vh;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom:0;
+    padding: 0;
+}
+.form-control {
+    width: 34vw;
+    height: 5vh;
+    font-size: 19px;
+}
+
+.dairy_button {
+  top: 110vh;
+}
+.main_button {
+    border: none;
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    display: inline-block;
+    border-radius: 20%;
+    margin:auto;
+    padding: 0;
+    left: 0;
+    right: 0;
+    top: 80vh;
+    bottom: 0;
+    position: center center;
+    position: absolute;
+    width: 60vw;
+    height: 8vh;
+    text-align: center;
+    color: #FFF;
+    text-decoration: none;
+    line-height: 43px;
+    /*margin: 30px;*/
+}
+
+
+.main_button:before {
+    background: #f0f0f0;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#D0D0D0), to(#f0f0f0));
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .5) inset, 0 1px 0 #FFF;
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .5) inset, 0 1px 0 #FFF;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .5) inset, 0 1px 0 #FFF;
+    position: absolute;
+    content: "";
+    left: -6px;
+    right: -6px;
+    top: -6px;
+    bottom: -10px;
+    z-index: -1;
+}
+.main_button:active {
+    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset;
+    top: 80vh;
+}
+
+.main_button {
+    text-shadow: -1px -1px 0 #A84155;
+    background: #D25068;
+    border: 1px solid #D25068;
+    background-image: -webkit-linear-gradient(top, #F66C7B, #D25068);
+    background-image: -moz-linear-gradient(top, #F66C7B, #D25068);
+    background-image: -ms-linear-gradient(top, #F66C7B, #D25068);
+    background-image: -o-linear-gradient(top, #F66C7B, #D25068);
+    background-image: linear-gradient(to bottom, #F66C7B, #D25068);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #AD4257, 0 4px 2px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #AD4257, 0 4px 2px rgba(0, 0, 0, .5);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #AD4257, 0 4px 2px rgba(0, 0, 0, .5);
+}
+.main_button:hover {
+    background: #F66C7B;
+    background-image: -webkit-linear-gradient(top, #D25068, #F66C7B);
+    background-image: -moz-linear-gradient(top, #D25068, #F66C7B);
+    background-image: -ms-linear-gradient(top, #D25068, #F66C7B);
+    background-image: -o-linear-gradient(top, #D25068, #F66C7B);
+    background-image: linear-gradient(top, #D25068, #F66C7B);
+}
+.login_text {
+    background-color:none;
+    width: 35vw;
+    height: 30vh;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 0;
+}
+
+.diary_container {
+
+  position: absolute;;
+  position: center center;
+  text-align: center;
+  background-color:#FFBC6C;
+  width: 85vw;
+  height:100vh;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 20vh;
+  bottom:0;
+  padding: 0;
+}
+
+
+.daity.dairty_dietary {
+  display: inline-block;
+}
+
+.diary_container .dairty_dietary p {
+  display: inline;
+}
+
+.mood p {
+  display: inline;
+}
+.pain p {
+  display: inline;
+}
+
+.medication p{
+  display: inline;
+}
+.social p{
+  display: inline;
+
+}
+
+.alternative p{
+  display: inline;
+
+}
+
+
+/*.sleep p {
+  display: inline;
+
+}*/
